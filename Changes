@@ -1,6 +1,60 @@
 Revision history for Perl extension Class::DBI::Plugin::FilterOnClick.
 (Previously known as Class::DBI::Plugin::HTML)
 
+1.1
+
+    * Corrected searchable feature with column name case issue (no longer case
+      sensitive)
+
+    + Added ability to group columns into sub tables within a cell while maintaining
+      ability to filter on value
+
+    + Added new method, add_link, to allow for grouping of columns as mentioned above
+
+    + Added configuration option, search_primary, to enable/disable search on
+      primary column - must be set to true (1) to search primary column
+      
+    + Added configuration option, search_exclude, allows for a list of columns
+      that should not be allowed to search on
+      
+    * Corrected error condition when run without a configuration file
+    
+    * Corrected issue with current page not properly being assigned in some cases
+    
+    + Added internal methods current_column and current_record to improve OO
+      consistency
+      
+    + Now passes the current record object as the fourth or third element in the
+      list of arguments for anonymous subs and FilterOnClickCustom feature
+
+    + Added FilterOnClickCustom columns feature. Allows you to add additional
+      columns that don't appear in the base table.  See documentation
+      
+    - Removed _value_link and replaced with add_link for internal use to create
+      hyperlinks
+      
+    + Added column_css_class method to allow assigning a different class to a
+      particular column
+      
+    + Added ability to remove filter on items selected from string_navigation
+      or search directly from the table rather then the string_navigation output
+      or "resetting" the table. NULL (empty) columns still require a reset to
+      remove the filter.
+      
+    * Refactored link creation
+
+    * Reworked module packaging to bring it inline with *modern* Perl modules
+    
+    * Removed several possible warnings when run with warnings enabled
+    
+    * Corrected issue with debug method not updating the current debug level
+      outside of the configuration file.
+
+    + Switched over to Class::DBI::Plugin::Pager (suggested by Emanuele Zeppieri)
+    
+    + Revised documentation on several items as well as grammar and spelling
+      mistake corrections
+
 1.0
     * Offical name change to FilterOnClick vs. HTML
     

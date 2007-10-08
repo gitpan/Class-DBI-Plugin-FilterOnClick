@@ -1,26 +1,32 @@
+use strict;
+use warnings;
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+
 WriteMakefile(
-    'NAME'		=> 'Class::DBI::Plugin::FilterOnClick',
-    'VERSION_FROM'	=> 'FilterOnClick.pm', # finds $VERSION
-    'PREREQ_PM'		=> {  
-                             Class::DBI::Pager => ">1",
-                             Class::DBI::AsForm     => .05,
-                             Class::DBI        => .94,
-                             HTML::Table       => ">2",
-                             Class::DBI::Plugin => .03,
-                             Class::DBI::Plugin::RetrieveAll => 1,
-                             Class::DBI::AbstractSearch => .04,
-			     Class::DBI::Plugin::AbstractCount => ">.01",
-                             Tie::Hash::Indexed => ">.02",
-			     HTML::Strip => ">1.00",
-                             HTML::FillInForm => ">1",
-                             CGI::FormBuilder => ">3",
-                             Config::Magic => ">.8",
-     
-                            }, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM => 'FilterOnClick.pm', # retrieve abstract from module
-       AUTHOR     => 'Aaron Johnson <aaronjjohnson@gmail.com>') : ()),
+    NAME                => 'Class::DBI::Plugin::FilterOnClick',
+    AUTHOR              => 'Aaron Johnson <aaronjjohnson@gmail.com>',
+    VERSION_FROM        => 'lib/Class/DBI/Plugin/FilterOnClick.pm',
+    ABSTRACT_FROM       => 'lib/Class/DBI/Plugin/FilterOnClick.pm',
+    PL_FILES            => {},
+    PREREQ_PM => {
+                            'Test::More'                             => 0,
+                            'Class::DBI::Pager'                      => ">1",
+                            'Class::DBI::AsForm'                     => .05,
+                            'Class::DBI'                             => .94,
+                            'HTML::Table'                            => ">2",
+                            'Class::DBI::AbstractSearch'             => .04,
+                            'Class::DBI::Plugin'                     => .03,
+                            'Class::DBI::Plugin::RetrieveAll'        => 1,
+                            'Class::DBI::Plugin::Pager'              => ">.4",
+                            'Class::DBI::Plugin::DeepAbstractSearch' => ">=.05",
+                            'Class::DBI::Plugin::AbstractCount'      => ">.01",
+                            'Tie::Hash::Indexed'                     => ">.02",
+                            'HTML::Strip'                            => ">1.00",
+                            'HTML::FillInForm'                       => ">1",
+                            'CGI::FormBuilder'                       => ">3",
+                            'Config::Magic'                          => 0,
+                            'URI::Escape'                            => 1
+    },
+    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean               => { FILES => 'Class-DBI-Plugin-FilterOnClick-*' },
 );
