@@ -10,7 +10,7 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
                             'Test::More'                             => 0,
-                            'Class::DBI::Pager'                      => ">1",
+                            'Class::DBI::Pager'                      => undef,
                             'Class::DBI::AsForm'                     => .05,
                             'Class::DBI'                             => .94,
                             'HTML::Table'                            => ">2",
@@ -18,7 +18,7 @@ WriteMakefile(
                             'Class::DBI::Plugin'                     => .03,
                             'Class::DBI::Plugin::RetrieveAll'        => 1,
                             'Class::DBI::Plugin::Pager'              => ">.4",
-                            'Class::DBI::Plugin::DeepAbstractSearch' => ">=.05",
+                            'Class::DBI::Plugin::DeepAbstractSearch' => undef,
                             'Class::DBI::Plugin::AbstractCount'      => ">.01",
                             'Tie::Hash::Indexed'                     => ">.02",
                             'HTML::Strip'                            => ">1.00",

@@ -1,6 +1,10 @@
 Revision history for Perl extension Class::DBI::Plugin::FilterOnClick.
 (Previously known as Class::DBI::Plugin::HTML)
 
+1.2
+    * Corrected issue with Makefile.PL format based on bug:
+    http://rt.cpan.org/Public/Bug/Display.html?id=33898
+
 1.1
 
     * Corrected searchable feature with column name case issue (no longer case

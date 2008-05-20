@@ -2,7 +2,7 @@ package Class::DBI::Plugin::FilterOnClick;
 
 use base qw( Class::DBI::Plugin );
 
-our $VERSION = 1.1;
+our $VERSION = 1.2;
 
 use strict;
 use warnings;
